@@ -1,22 +1,33 @@
 <?php 
+
 class produk {
-    public $judul, $penulis, $penerbit, $harga;
-public function _construct(){
-    echo "hello";
+    public $judul, 
+    $penulis, 
+    $penerbit, 
+    $harga;
+
+
+public function __construct($judul = 'judul', $penulis = 'penulis', $penerbit = 'penerbit', $harga = 0){
+    //echo "Hello";
+    $this->judul = $judul;
+    $this->penulis = $penulis;
+    $this->penerbit = $penerbit;
+    $this->harga = $harga;
+
 }
-    public function getLabel(){
+
+
+    public function getLabel() {
         return "$this->judul, $this->penulis";
+        //return $this->judul .','. $this-.penulis
     }
 }
-$produk1 = new Produk();
-$produk1 ->judul = "Naruto";
-$produk2 ->penulis = "Faisal kisi moto";
 
 
-$produk2 = new Produk();
-$produk2 ->judul = "Boruto";
-$produk2 ->penulis = "Faisal kisi moto";
-
+$produk1 = new Produk("Naruto", "Masashi Kisimoto", "Erlangga", 10000);
+$produk2 = new Produk("Uncharted", "Noll", "Pustaka Ilmu", 50000);
+$produk3 = new Produk("Doraemon", "Faisal", "Iri Suaka", 50000);
+$produk4 = new Produk();
 
 // var_dump($produk1);
 // var_dump($produk2);
@@ -24,4 +35,9 @@ $produk2 ->penulis = "Faisal kisi moto";
 echo $produk1 -> getLabel();
 echo "<br>";
 echo $produk2 -> getLabel();
+echo "<br>";
+echo $produk3 -> getLabel();
+echo "<br>";
+echo $produk4 -> getLabel();
+
 ?>
